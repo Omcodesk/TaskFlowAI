@@ -40,10 +40,8 @@ const AdminDashboard = () => {
                         <div className="h-[350px]">
                             <StatusDistributionChart />
                         </div>
-                        <div className="flex-1">
-                            <PendingApprovals />
-                        </div>
-                        <div className="flex-1 min-h-[400px]">
+                        <PendingApprovals />
+                        <div className="flex-1 min-h-[400px] max-h-[600px]">
                             <ActivityFeed />
                         </div>
                     </div>
