@@ -57,3 +57,24 @@ export const rejectUser = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+export const resetOmchaddhaUser = async (req, res) => {
+    try {
+        const emailToReset = 'omchaddha7@gmail.com';
+        const user = await User.findOne({ email: emailToReset });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        
+        import('bcryptjs').then(async (bcrypt) => {
+            const hashedPassword = await bcrypt.default.hash('omchaddha', 10);
+            user.password = hashedPassword;
+            user.role = 'Admin';
+            user.isApproved = true;
+            await user.save();
+            res.json({ message: 'Account successfully reset to Admin with password: omchaddha' });
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
