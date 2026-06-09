@@ -12,9 +12,9 @@
 
 </div>
 
-TaskFlow transforms traditional project tracking into a fluid, collaborative workspace. Engineered with the MERN stack and strictly adhering to modern system design principles, it features instantaneous real-time updates via WebSockets, AI-powered task contextualization, and role-based access control.
+TaskFlow transforms traditional project tracking into a fluid, collaborative workspace. Engineered with the **MERN stack** and strictly adhering to modern system design principles, it features instantaneous real-time updates via WebSockets, AI-powered task contextualization, and role-based access control.
 
-Designed from the ground up to demonstrate full-stack proficiency, distributed system handling, and seamless 3rd-party API integrations.
+Designed from the ground up to demonstrate production-ready **Full-Stack proficiency**, distributed system handling, **AI/ML integration**, and seamless 3rd-party API integrations.
 
 ---
 
@@ -34,6 +34,17 @@ Leverages `Recharts` to process and visualize unstructured MongoDB data into act
 
 ### 📂 Cloud-Ready Asset Management
 Integrated `multer` processing pipelines for secure handling, validation, and storage of local attachments, preparing for seamless AWS S3/Cloudinary migrations.
+
+---
+
+## 🏆 Technical Highlights (For Recruiters & Engineers)
+
+As a Full-Stack and AI Developer, this project was built to solve real-world engineering challenges:
+
+*   **AI/ML Prompt Engineering:** Architected a custom OpenAI wrapper that enforces strict JSON-structured outputs. The AI acts as an autonomous Project Manager, successfully converting ambiguous 3-word user inputs into structured, 10-step actionable technical checklists with calculated priorities.
+*   **Real-Time State Synchronization:** Replaced standard REST polling with a persistent `Socket.io` duplex connection. Overcame race conditions in React state management to ensure that when a manager drags a Kanban card on their screen, the exact pixel-perfect update instantly reflects on the employee's screen.
+*   **Security & Data Integrity:** Implemented production-level security including JWT stateless authentication, `bcrypt` password hashing, CORS policies, environment variable encryption, and strict MongoDB Schema validation.
+*   **Responsive UI/UX Engineering:** Built a complex, heavy-data dashboard that remains butter-smooth and fully responsive on mobile devices, utilizing custom Tailwind CSS grids and Framer Motion micro-animations.
 
 ---
 
