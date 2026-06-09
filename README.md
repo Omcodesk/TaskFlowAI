@@ -1,95 +1,92 @@
-# Task Assignment & Workflow Management System
+# TaskFlow - Enterprise Employee Management System
 
-A role-based task assignment and workflow management system built using React.js.  
-The application allows administrators to assign tasks through a centralized dashboard, while employees manage and track assigned tasks via a dedicated interface.
+![TaskFlow Header](https://via.placeholder.com/1200x400?text=TaskFlow+Enterprise)
 
-This project focuses on frontend architecture, state management, and role-based UI flows commonly used in real-world enterprise applications.
+TaskFlow is a modern, real-time Employee Management and Task Workflow platform built with the MERN stack (MongoDB, Express, React, Node.js). It transforms traditional task tracking into a fully collaborative, live workspace.
 
----
+## 🌟 Core Features
 
-## 🚀 Features
+- **Drag-and-Drop Kanban Board:** Effortlessly manage project lifecycles with a fluid, tactile Kanban interface built on `@hello-pangea/dnd`.
+- **Real-Time Collaboration (WebSockets):** Powered by `socket.io`. When a teammate updates a task, adds a comment, or changes a status, your screen updates instantly without refreshing.
+- **AI Project Assistant:** Built-in OpenAI integration. Type a simple title, and the AI automatically generates a markdown-formatted subtask checklist and suggests priority levels based on context.
+- **Advanced Analytics Dashboard:** Deep insights into team productivity using `Recharts`. Visualizes completion trends over time, current status distributions, and individual employee workloads.
+- **Live Notifications & Presence:** Targeted real-time notifications for task assignments and mentions. A live "Online Presence" indicator in the navigation bar shows exactly who is actively using the app.
+- **File Attachments:** Integrated `multer` allowing users to securely upload and preview images, PDFs, and documents directly within task cards.
+- **Role-Based Access Control (RBAC):** Strict JWT-based authentication delineating between `Admin` (oversight and creation) and `Employee` (task execution).
 
-### Admin Dashboard
-- Create and assign tasks to employees
-- View all tasks and their current status
-- Monitor task progress across the organization
+## 🚀 Tech Stack
 
-### Employee Dashboard
-- View assigned tasks
-- Accept assigned tasks
-- Mark tasks as completed or failed
+- **Frontend:** React 18, Vite, Tailwind CSS, Framer Motion (Animations), React Query (State Management), React Router, Lucide Icons, Recharts.
+- **Backend:** Node.js, Express, MongoDB (Mongoose), Socket.io, Multer (File Uploads), OpenAI API.
+- **Authentication:** JSON Web Tokens (JWT), bcryptjs.
 
-### Authentication & State
-- Role-based login (Admin / Employee)
-- Persistent login using browser localStorage
-- Centralized state management using React Context API
+## 🛠️ Installation & Setup
 
----
+Follow these instructions to get TaskFlow running on your local machine.
 
-## 🛠️ Tech Stack
+### Prerequisites
+- Node.js (v16+)
+- MongoDB (Local instance or MongoDB Atlas cluster)
 
-### Frontend
-- React.js
-- JavaScript (ES6+)
-- HTML5
-- CSS3
-
-### State Management
-- React Context API
-- React Hooks (`useState`, `useContext`, `useEffect`)
-
-### Styling
-- Tailwind CSS
-
-### Data Persistence
-- Browser localStorage
-
-### Tooling & Development
-- Vite
-- Git & GitHub
-- npm
-- React DevTools
-
----
-
-## 🧠 Architecture Overview
-
-- Component-based frontend architecture
-- Role-based access control (RBAC)
-- Separation of concerns between UI, state, and logic
-- Frontend-focused design with no backend dependency
-
----
-
-## 📦 Installation & Setup
-
-Clone the repository:
-
+### 1. Clone the repository
 ```bash
-git clone https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System.git
+git clone https://github.com/yourusername/taskflow.git
+cd taskflow
+```
 
-Install dependencies:
-
+### 2. Backend Setup
+```bash
+cd backend
 npm install
+```
 
+Create a `.env` file in the `backend` directory (use `.env.example` as a template):
+```env
+NODE_ENV=development
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+OPENAI_API_KEY=your_openai_api_key_here # Optional (Falls back to simulation mode if omitted)
+```
 
-Start the development server:
-
+Start the backend server:
+```bash
 npm run dev
+```
 
+### 3. Frontend Setup
+Open a new terminal window:
+```bash
+cd ../ems # or the frontend root directory
+npm install
+```
 
-Open in browser:
+Start the Vite development server:
+```bash
+npm run dev
+```
 
-http://localhost:5173
+### 4. Access the App
+Open your browser and navigate to `http://localhost:5173`. 
 
-## Demo Credentials
+## Demo Credentials (If using seeded database)
 
 ### Admin
-- Email: admin@me.com
-- Password: 123
+- Email: admin@demo.com
+- Password: demo123
 
 ### Employee
-- Email: employee1@example.com
-- Password: 123
+- Email: employee@demo.com
+- Password: demo123
 
-> Note: This project uses browser localStorage for authentication and data persistence. Credentials are for demo purposes only.
+*(To test the full suite, register a new account and approve it from the Admin dashboard!)*
+
+## 📦 Production Build
+To prepare the frontend for deployment:
+```bash
+npm run build
+```
+This generates an optimized static bundle in the `dist/` directory, ready to be hosted on Vercel, Netlify, or served via Express.
+
+---
+*TaskFlow - Built with modern web standards.*
