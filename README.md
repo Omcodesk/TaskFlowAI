@@ -1,92 +1,141 @@
-# TaskFlow - Enterprise Employee Management System
+<div align="center">
 
-![TaskFlow Header](https://via.placeholder.com/1200x400?text=TaskFlow+Enterprise)
+# 🚀 TaskFlow AI - Intelligent Enterprise Workspace
 
-TaskFlow is a modern, real-time Employee Management and Task Workflow platform built with the MERN stack (MongoDB, Express, React, Node.js). It transforms traditional task tracking into a fully collaborative, live workspace.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-taskflowai.vercel.app-6366f1?style=for-the-badge&logo=vercel)](https://task-flow-ai-self.vercel.app)
+[![Tech Stack](https://img.shields.io/badge/Stack-MERN%20%7C%20WebSockets%20%7C%20OpenAI-000000?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)]()
 
-## 🌟 Core Features
+**A real-time, AI-driven Employee Management & Task Workflow platform.**
 
-- **Drag-and-Drop Kanban Board:** Effortlessly manage project lifecycles with a fluid, tactile Kanban interface built on `@hello-pangea/dnd`.
-- **Real-Time Collaboration (WebSockets):** Powered by `socket.io`. When a teammate updates a task, adds a comment, or changes a status, your screen updates instantly without refreshing.
-- **AI Project Assistant:** Built-in OpenAI integration. Type a simple title, and the AI automatically generates a markdown-formatted subtask checklist and suggests priority levels based on context.
-- **Advanced Analytics Dashboard:** Deep insights into team productivity using `Recharts`. Visualizes completion trends over time, current status distributions, and individual employee workloads.
-- **Live Notifications & Presence:** Targeted real-time notifications for task assignments and mentions. A live "Online Presence" indicator in the navigation bar shows exactly who is actively using the app.
-- **File Attachments:** Integrated `multer` allowing users to securely upload and preview images, PDFs, and documents directly within task cards.
-- **Role-Based Access Control (RBAC):** Strict JWT-based authentication delineating between `Admin` (oversight and creation) and `Employee` (task execution).
+---
 
-## 🚀 Tech Stack
+</div>
 
-- **Frontend:** React 18, Vite, Tailwind CSS, Framer Motion (Animations), React Query (State Management), React Router, Lucide Icons, Recharts.
-- **Backend:** Node.js, Express, MongoDB (Mongoose), Socket.io, Multer (File Uploads), OpenAI API.
-- **Authentication:** JSON Web Tokens (JWT), bcryptjs.
+TaskFlow transforms traditional project tracking into a fluid, collaborative workspace. Engineered with the MERN stack and strictly adhering to modern system design principles, it features instantaneous real-time updates via WebSockets, AI-powered task contextualization, and role-based access control.
 
-## 🛠️ Installation & Setup
+Designed from the ground up to demonstrate full-stack proficiency, distributed system handling, and seamless 3rd-party API integrations.
 
-Follow these instructions to get TaskFlow running on your local machine.
+---
 
-### Prerequisites
-- Node.js (v16+)
-- MongoDB (Local instance or MongoDB Atlas cluster)
+## ✨ Enterprise-Grade Features
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/taskflow.git
-cd taskflow
+### 🧠 AI-Powered Task Generation (OpenAI Integration)
+Seamlessly integrates with GPT-4 to autonomously break down complex project directives. Submit a vague task title, and the AI automatically infers priority, categorizes the workload, and generates a structured, markdown-formatted sub-task checklist. 
+
+### ⚡ Real-Time Collaborative Environment
+Built on `Socket.io` for event-driven architecture. Every drag, drop, comment, and status change is broadcasted to all connected clients instantly. Achieves Google-Docs style live synchronization with zero polling overhead.
+
+### 🔐 Multi-Tier Authorization & RBAC
+Strict JSON Web Token (JWT) stateless authentication. Employs middleware-level route protection delineating `Admin` privileges (user approval, global analytics, project creation) from `Employee` execution boundaries. Includes a robust manual **Admin Approval Workflow** to prevent unauthorized access.
+
+### 📊 Interactive Analytics Engine
+Leverages `Recharts` to process and visualize unstructured MongoDB data into actionable insights. Features dynamic burndown charts, real-time status distributions, and employee workload histograms.
+
+### 📂 Cloud-Ready Asset Management
+Integrated `multer` processing pipelines for secure handling, validation, and storage of local attachments, preparing for seamless AWS S3/Cloudinary migrations.
+
+---
+
+## 🏗️ System Architecture & Tech Stack
+
+```mermaid
+graph TD
+    Client[React + Vite Frontend] <-->|REST API + WebSockets| Server[Node.js + Express Backend]
+    Server <-->|Mongoose ODM| DB[(MongoDB Atlas Cloud)]
+    Server <-->|API Calls| OpenAI[OpenAI GPT-4]
+    Client -->|Deployed on| Vercel[Vercel Edge Network]
+    Server -->|Hosted on| Render[Render PaaS]
 ```
 
-### 2. Backend Setup
+### Frontend (Client-Side)
+- **Framework:** React 18 & Vite
+- **Styling:** Tailwind CSS, Framer Motion (Micro-interactions)
+- **State & Data Fetching:** React Query (TanStack), Context API
+- **Routing:** React Router v6
+- **Visualizations:** Recharts, Lucide Icons
+- **Drag & Drop:** `@hello-pangea/dnd`
+
+### Backend (Server-Side)
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB Atlas (NoSQL) & Mongoose ODM
+- **Real-time Engine:** Socket.io
+- **Security:** bcryptjs (Password Hashing), JWT (Auth Tokens), CORS
+- **Integrations:** OpenAI API
+
+---
+
+## 🎮 Live Demonstration
+
+The application is deployed and fully accessible. Because the backend is hosted on a free cloud tier, **it may take ~50 seconds for the server to wake up** on your first click. 
+
+🌐 **Live URL:** [https://task-flow-ai-self.vercel.app](https://task-flow-ai-self.vercel.app)
+
+### Demo Access Controls
+For convenience during evaluation, the platform includes pre-configured access portals. You can bypass the registration and approval workflow by clicking the **"Test as Admin"** or **"Test as Employee"** buttons on the login screen.
+
+*Note: The platform is a single-tenant environment. Actions performed via the Demo Admin account are visible to all users currently evaluating the system.*
+
+---
+
+## 💻 Local Development Setup
+
+If you wish to run the architecture locally for code review or contributions:
+
+### Prerequisites
+- Node.js (v18+)
+- MongoDB Community Server (or an Atlas Cluster URI)
+- OpenAI API Key (Optional)
+
+### 1. Repository Initialization
+```bash
+git clone https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System.git
+cd Task-Assignment-Workflow-Management-System/ems
+```
+
+### 2. Backend Bootstrapping
 ```bash
 cd backend
 npm install
-```
 
-Create a `.env` file in the `backend` directory (use `.env.example` as a template):
-```env
+# Create environment configuration
+cat << EOF > .env
 NODE_ENV=development
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-OPENAI_API_KEY=your_openai_api_key_here # Optional (Falls back to simulation mode if omitted)
-```
+JWT_SECRET=super_secure_secret_token
+OPENAI_API_KEY=your_openai_api_key
+EOF
 
-Start the backend server:
-```bash
+# Initialize Database with Seed Data
+node seedDemo.js
+
+# Start Development Server
 npm run dev
 ```
 
-### 3. Frontend Setup
-Open a new terminal window:
+### 3. Frontend Compilation
 ```bash
-cd ../ems # or the frontend root directory
+# Open a new terminal instance
+cd ../
 npm install
-```
-
-Start the Vite development server:
-```bash
 npm run dev
 ```
-
-### 4. Access the App
-Open your browser and navigate to `http://localhost:5173`. 
-
-## Demo Credentials (If using seeded database)
-
-### Admin
-- Email: admin@demo.com
-- Password: demo123
-
-### Employee
-- Email: employee@demo.com
-- Password: demo123
-
-*(To test the full suite, register a new account and approve it from the Admin dashboard!)*
-
-## 📦 Production Build
-To prepare the frontend for deployment:
-```bash
-npm run build
-```
-This generates an optimized static bundle in the `dist/` directory, ready to be hosted on Vercel, Netlify, or served via Express.
+Navigate to `http://localhost:5173` to access the local client.
 
 ---
-*TaskFlow - Built with modern web standards.*
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System/issues). Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+## 📝 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+---
+<div align="center">
+<b>Engineered by Om Chaddha</b><br>
+<i>Software Developer | Full-Stack Engineer | AI/ML Enthusiast</i>
+</div>
