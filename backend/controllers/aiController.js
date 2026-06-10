@@ -4,7 +4,7 @@ dotenv.config();
 
 const apiKey = process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY;
 const baseURL = process.env.GROQ_API_KEY ? "https://api.groq.com/openai/v1" : undefined;
-const aiModel = process.env.GROQ_API_KEY ? "llama3-8b-8192" : "gpt-3.5-turbo";
+const aiModel = process.env.GROQ_API_KEY ? "llama-3.1-8b-instant" : "gpt-3.5-turbo";
 
 const openai = apiKey ? new OpenAI({ apiKey, baseURL }) : null;
 
