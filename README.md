@@ -1,16 +1,45 @@
 <div align="center">
 
-# 🚀 TaskFlow AI - Intelligent Enterprise Workspace
+# 🚀 TaskFlow AI
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-taskflowai.vercel.app-6366f1?style=for-the-badge&logo=vercel)](https://task-flow-ai-self.vercel.app)
-[![Tech Stack](https://img.shields.io/badge/Stack-MERN%20%7C%20WebSockets%20%7C%20OpenAI-000000?style=for-the-badge)]()
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)]()
+*Intelligent Enterprise Workspace*
 
-**A real-time, AI-driven Employee Management & Task Workflow platform.**
+**Real-Time Collaboration · AI Task Contextualization · Role-Based Access Control**
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-taskflowai.vercel.app-2563eb?style=for-the-badge&logo=vercel)](https://task-flow-ai-self.vercel.app)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)]()
+[![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)]()
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)]()
+
+[![Deployed: Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)]()
+[![UI: Tailwind](https://img.shields.io/badge/UI-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)]()
+[![Auth: JWT](https://img.shields.io/badge/Auth-JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)]()
+[![Realtime: Socket.io](https://img.shields.io/badge/Realtime-Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white)]()
+[![AI: OpenAI](https://img.shields.io/badge/AI-OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)]()
+
+<br/>
+
+🌐 [Live Demo](https://task-flow-ai-self.vercel.app) · 🐛 [Report Bug](https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System/issues) · 💡 [Request Feature](https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System/issues) · 📖 [Contributing](CONTRIBUTING.md)
+
+</div>
 
 ---
 
-</div>
+## 📋 Table of Contents
+
+- [Overview](#-overview)
+- [Enterprise-Grade Features](#-enterprise-grade-features)
+- [Technical Highlights](#-technical-highlights-for-recruiters--engineers)
+- [System Architecture & Tech Stack](#️-system-architecture--tech-stack)
+- [Live Demonstration](#-live-demonstration)
+- [Local Development Setup](#-local-development-setup)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🔎 Overview
 
 TaskFlow transforms traditional project tracking into a fluid, collaborative workspace. Engineered with the **MERN stack** and strictly adhering to modern system design principles, it features instantaneous real-time updates via WebSockets, AI-powered task contextualization, and role-based access control.
 
