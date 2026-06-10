@@ -2,7 +2,7 @@
 
 # 🚀 TaskFlow AI
 
-*Intelligent Enterprise Workspace*
+*A Full-Stack Project Management & Real-Time Kanban Platform powered by AI*
 
 **Real-Time Collaboration · AI Task Contextualization · Role-Based Access Control**
 
