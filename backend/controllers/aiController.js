@@ -2,9 +2,11 @@ import { OpenAI } from 'openai';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const openai = process.env.OPENAI_API_KEY 
-    ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) 
-    : null;
+const apiKey = process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY;
+const baseURL = process.env.GROQ_API_KEY ? "https://api.groq.com/openai/v1" : undefined;
+const aiModel = process.env.GROQ_API_KEY ? "llama3-8b-8192" : "gpt-3.5-turbo";
+
+const openai = apiKey ? new OpenAI({ apiKey, baseURL }) : null;
 
 // @desc    Breakdown a simple task title into a detailed description and metadata
 // @route   POST /api/ai/breakdown
@@ -42,7 +44,7 @@ export const breakdownTask = async (req, res) => {
         }`;
 
         const response = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
+            model: aiModel,
             messages: [{ role: 'user', content: prompt }],
             temperature: 0.7,
         });
@@ -84,7 +86,7 @@ export const summarizeTask = async (req, res) => {
         }
 
         const response = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
+            model: aiModel,
             messages: [{ role: 'user', content: `Summarize the following task description into 3 short, actionable bullet points:\n\n${text}` }],
             temperature: 0.5,
         });
@@ -116,7 +118,7 @@ export const suggestPriority = async (req, res) => {
         Title: ${title}
         Description: ${description || 'N/A'}`;
         const response = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
+            model: aiModel,
             messages: [{ role: 'user', content: prompt }],
             temperature: 0.3,
         });
@@ -144,7 +146,7 @@ export const improveDescription = async (req, res) => {
 
         const prompt = `Rewrite and improve the following task description to make it professional, clear, and actionable. Add bullet points if it helps readability:\n\n${text}`;
         const response = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
+            model: aiModel,
             messages: [{ role: 'user', content: prompt }],
             temperature: 0.6,
         });
