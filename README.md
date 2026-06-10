@@ -16,9 +16,11 @@
 [![UI: Tailwind](https://img.shields.io/badge/UI-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)]()
 [![Auth: JWT](https://img.shields.io/badge/Auth-JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)]()
 [![Realtime: Socket.io](https://img.shields.io/badge/Realtime-Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white)]()
-[![AI: OpenAI](https://img.shields.io/badge/AI-OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)]()
+[![AI: Groq Llama 3](https://img.shields.io/badge/AI-Groq%20Llama%203-F55036?style=for-the-badge&logo=groq&logoColor=white)]()
 
 <br/>
+
+![TaskFlow AI Admin Dashboard Overview](assets/admin-dashboard.png)
 
 🌐 [Live Demo](https://task-flow-ai-self.vercel.app) · 🐛 [Report Bug](https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System/issues) · 💡 [Request Feature](https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System/issues) · 📖 [Contributing](CONTRIBUTING.md)
 
@@ -29,104 +31,115 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
+- [Application Showcase](#-application-showcase)
 - [Enterprise-Grade Features](#-enterprise-grade-features)
 - [Technical Highlights](#-technical-highlights-for-recruiters--engineers)
-- [System Architecture & Tech Stack](#️-system-architecture--tech-stack)
+- [System Architecture & Directory Structure](#️-system-architecture--directory-structure)
 - [Live Demonstration](#-live-demonstration)
 - [Local Development Setup](#-local-development-setup)
-- [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
 ## 🔎 Overview
 
-TaskFlow transforms traditional project tracking into a fluid, collaborative workspace. Engineered with the **MERN stack** and strictly adhering to modern system design principles, it features instantaneous real-time updates via WebSockets, AI-powered task contextualization, and role-based access control.
+**TaskFlow AI** is a distributed, real-time employee and project management ecosystem designed to eliminate friction in modern agile workflows. Engineered with the **MERN stack** and designed for massive concurrency, it transforms static task lists into a living, breathing workspace.
 
-Designed from the ground up to demonstrate production-ready **Full-Stack proficiency**, distributed system handling, **AI/ML integration**, and seamless 3rd-party API integrations.
+By natively integrating **Llama-3 via the Groq API**, the platform autonomously acts as a virtual Project Manager—breaking down complex directives into actionable checklists, intelligently routing tasks, and automatically assigning priorities.
+
+Designed from the ground up to demonstrate production-ready **Full-Stack proficiency**, event-driven architecture, **AI/ML API integration**, and seamless 3rd-party deployments across Vercel and Render.
+
+---
+
+## 📸 Application Showcase
+
+### 🤖 AI-Powered Task Generation
+Instead of managers spending hours writing tickets, the AI reads a 3-word title and instantly generates a highly-technical, markdown-formatted sub-task checklist. It also automatically infers priority.
+![AI Task Generation in Action](assets/ai-task-breakdown.png)
+
+### ⚡ Real-Time Drag-and-Drop Kanban Board
+Built on WebSockets (`Socket.io`). When an admin drags a card across the board, the exact pixel-perfect update instantly reflects on all connected employee screens globally without any HTTP polling.
+![Real-Time Drag and Drop Kanban Board](assets/kanban-board.png)
+
+### 📈 Global Analytics & Metrics
+Aggregating thousands of task data points from MongoDB into beautiful, interactive Recharts visualizations to track team velocity and workload distribution.
+![Interactive Analytics Dashboard](assets/Analytics-dashboard.png)
+
+### 📂 Dynamic Project Workspaces
+Strict JSON Web Token (JWT) stateless authentication delineates `Admin` privileges from `Employee` execution boundaries, ensuring data integrity across multiple active project environments.
+![Projects Dashboard](assets/Projects-dashboard.png)
 
 ---
 
 ## ✨ Enterprise-Grade Features
 
-### 🧠 AI-Powered Task Generation (OpenAI Integration)
-Seamlessly integrates with GPT-4 to autonomously break down complex project directives. Submit a vague task title, and the AI automatically infers priority, categorizes the workload, and generates a structured, markdown-formatted sub-task checklist. 
-
-### ⚡ Real-Time Collaborative Environment
-Built on `Socket.io` for event-driven architecture. Every drag, drop, comment, and status change is broadcasted to all connected clients instantly. Achieves Google-Docs style live synchronization with zero polling overhead.
-
-### 🔐 Multi-Tier Authorization & RBAC
-Strict JSON Web Token (JWT) stateless authentication. Employs middleware-level route protection delineating `Admin` privileges (user approval, global analytics, project creation) from `Employee` execution boundaries. Includes a robust manual **Admin Approval Workflow** to prevent unauthorized access.
-
-### 📊 Interactive Analytics Engine
-Leverages `Recharts` to process and visualize unstructured MongoDB data into actionable insights. Features dynamic burndown charts, real-time status distributions, and employee workload histograms.
-
-### 📂 Cloud-Ready Asset Management
-Integrated `multer` processing pipelines for secure handling, validation, and storage of local attachments, preparing for seamless AWS S3/Cloudinary migrations.
+*   **Autonomous AI Task Orchestration:** Seamlessly integrates with the lightning-fast Groq API (Llama-3.1). Submit a vague task, and the AI automatically infers priority, categorizes the workload, and generates structured checklists.
+*   **Zero-Latency WebSockets Synchronization:** Event-driven architecture replaces standard REST polling. Every drag, drop, and status change is broadcasted via a duplex `Socket.io` connection to all connected clients.
+*   **Multi-Tier Authorization & RBAC:** Employs middleware-level route protection delineating `Admin` privileges (user approval, global analytics) from `Employee` execution boundaries. Includes a robust manual **Admin Approval Workflow** to prevent unauthorized registration.
+*   **Interactive Analytics Engine:** Leverages `Recharts` to process unstructured NoSQL data into actionable insights, featuring dynamic burndown charts and real-time status distributions.
 
 ---
 
 ## 🏆 Technical Highlights (For Recruiters & Engineers)
 
-As a Full-Stack and AI Developer, this project was built to solve real-world engineering challenges:
+As a Full-Stack Software Engineer, this project was architected to solve complex, real-world engineering challenges:
 
-*   **AI/ML Prompt Engineering:** Architected a custom OpenAI wrapper that enforces strict JSON-structured outputs. The AI acts as an autonomous Project Manager, successfully converting ambiguous 3-word user inputs into structured, 10-step actionable technical checklists with calculated priorities.
-*   **Real-Time State Synchronization:** Replaced standard REST polling with a persistent `Socket.io` duplex connection. Overcame race conditions in React state management to ensure that when a manager drags a Kanban card on their screen, the exact pixel-perfect update instantly reflects on the employee's screen.
-*   **Security & Data Integrity:** Implemented production-level security including JWT stateless authentication, `bcrypt` password hashing, CORS policies, environment variable encryption, and strict MongoDB Schema validation.
-*   **Responsive UI/UX Engineering:** Built a complex, heavy-data dashboard that remains butter-smooth and fully responsive on mobile devices, utilizing custom Tailwind CSS grids and Framer Motion micro-animations.
+*   **Prompt Engineering & Deterministic AI:** Architected a custom API wrapper that enforces strict formatting outputs from LLMs. The AI acts as an autonomous PM, successfully converting ambiguous user inputs into 10-step actionable technical checklists with calculated priorities.
+*   **Race-Condition Mitigation:** Overcame race conditions in React state management by decoupling local optimistic UI updates from the server-side WebSocket broadcasts, resulting in a butter-smooth drag-and-drop experience (`@hello-pangea/dnd`).
+*   **Security & Data Integrity:** Implemented production-level security including JWT stateless authentication, `bcrypt` password hashing, strict CORS policies, environment variable encryption, and robust Mongoose Schema validation.
+*   **Responsive UI/UX Engineering:** Built a complex, heavy-data React dashboard utilizing custom Tailwind CSS grids, Flexbox layouts, and Framer Motion micro-animations that remains entirely functional on mobile devices.
 
 ---
 
-## 🏗️ System Architecture & Tech Stack
+## 🏗️ System Architecture & Directory Structure
 
+TaskFlow AI is a monorepo divided into a decoupled client and server to allow independent horizontal scaling.
+
+```text
+Task-Assignment-Workflow-Management-System/
+├── ems/ (Client Application)
+│   ├── src/
+│   │   ├── api/          # Axios interceptors and centralized REST API calls
+│   │   ├── components/   # Modular, reusable React components (Auth, Dashboard, Modals)
+│   │   ├── context/      # React Context for global state (AuthContext, SocketContext)
+│   │   └── utils/        # Helper functions and formatter utilities
+│   ├── package.json      # Vite & React dependencies
+│   └── tailwind.config.js# Custom design system tokens
+│
+└── ems/backend/ (Server Application)
+    ├── controllers/      # Business logic (aiController, taskController, userController)
+    ├── middleware/       # JWT verification, Role-based access checks, Error handling
+    ├── models/           # Mongoose NoSQL Schemas (User, Task, Project)
+    ├── routes/           # Express API route definitions
+    ├── .env              # Encrypted secrets (Mongo URI, Groq API Key, JWT Secret)
+    └── index.js          # Express server initialization and Socket.io mounting
+```
+
+### Flow Architecture
 ```mermaid
 graph TD
     Client[React + Vite Frontend] <-->|REST API + WebSockets| Server[Node.js + Express Backend]
     Server <-->|Mongoose ODM| DB[(MongoDB Atlas Cloud)]
-    Server <-->|API Calls| OpenAI[OpenAI GPT-4]
+    Server <-->|Groq API| AI[Llama-3.1 LLM]
     Client -->|Deployed on| Vercel[Vercel Edge Network]
     Server -->|Hosted on| Render[Render PaaS]
 ```
-
-### Frontend (Client-Side)
-- **Framework:** React 18 & Vite
-- **Styling:** Tailwind CSS, Framer Motion (Micro-interactions)
-- **State & Data Fetching:** React Query (TanStack), Context API
-- **Routing:** React Router v6
-- **Visualizations:** Recharts, Lucide Icons
-- **Drag & Drop:** `@hello-pangea/dnd`
-
-### Backend (Server-Side)
-- **Runtime:** Node.js
-- **Framework:** Express.js
-- **Database:** MongoDB Atlas (NoSQL) & Mongoose ODM
-- **Real-time Engine:** Socket.io
-- **Security:** bcryptjs (Password Hashing), JWT (Auth Tokens), CORS
-- **Integrations:** OpenAI API
 
 ---
 
 ## 🎮 Live Demonstration
 
-The application is deployed and fully accessible. Because the backend is hosted on a free cloud tier, **it may take ~50 seconds for the server to wake up** on your first click. 
+The application is fully deployed. Because the backend is hosted on a free cloud tier, **it may take ~50 seconds for the server to wake up** on your first click. 
 
 🌐 **Live URL:** [https://task-flow-ai-self.vercel.app](https://task-flow-ai-self.vercel.app)
 
 ### Demo Access Controls
-For convenience during evaluation, the platform includes pre-configured access portals. You can bypass the registration and approval workflow by clicking the **"Test as Admin"** or **"Test as Employee"** buttons on the login screen.
-
-*Note: The platform is a single-tenant environment. Actions performed via the Demo Admin account are visible to all users currently evaluating the system.*
+For convenience during evaluation, the platform includes pre-configured portals. Bypass the registration workflow by clicking the **"Test as Admin"** or **"Test as Employee"** buttons on the login screen.
 
 ---
 
 ## 💻 Local Development Setup
 
-If you wish to run the architecture locally for code review or contributions:
-
-### Prerequisites
-- Node.js (v18+)
-- MongoDB Community Server (or an Atlas Cluster URI)
-- OpenAI API Key (Optional)
+If you wish to run the architecture locally for code review:
 
 ### 1. Repository Initialization
 ```bash
@@ -145,7 +158,7 @@ NODE_ENV=development
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=super_secure_secret_token
-OPENAI_API_KEY=your_openai_api_key
+GROQ_API_KEY=your_groq_llama3_key
 EOF
 
 # Initialize Database with Seed Data
@@ -162,17 +175,7 @@ cd ../
 npm install
 npm run dev
 ```
-Navigate to `http://localhost:5173` to access the local client.
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Omcodesk/Task-Assignment-Workflow-Management-System/issues). Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
-## 📝 License
-
-This project is open-sourced software licensed under the [MIT license](LICENSE).
+Navigate to `http://localhost:5173`.
 
 ---
 <div align="center">
