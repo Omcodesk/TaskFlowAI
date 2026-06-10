@@ -144,7 +144,10 @@ export const improveDescription = async (req, res) => {
             return res.json({ improved: `✨ **Improved Description:**\n\n${text}\n\n*Added more context and formatted professionally. (Simulated)*` });
         }
 
-        const prompt = `Rewrite and improve the following task description to make it professional, clear, and actionable. Add bullet points if it helps readability:\n\n${text}`;
+        const prompt = `Rewrite and improve the following raw task description to make it professional, clear, and actionable. Add bullet points if it helps readability. 
+        CRITICAL: If the text is very short or messy, expand it into a professional paragraph. Do NOT chat, converse, or ask for more details. Do NOT say "Here is the improved description". Just output the final improved text.
+        
+        RAW TEXT: "${text}"`;
         const response = await openai.chat.completions.create({
             model: aiModel,
             messages: [{ role: 'user', content: prompt }],
