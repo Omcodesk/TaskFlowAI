@@ -72,10 +72,10 @@ Strict JSON Web Token (JWT) stateless authentication delineates `Admin` privileg
 
 ## ✨ Enterprise-Grade Features
 
-*   **Autonomous AI Task Orchestration:** Seamlessly integrates with the lightning-fast Groq API (Llama-3.1). Submit a vague task, and the AI automatically infers priority, categorizes the workload, and generates structured checklists.
-*   **Zero-Latency WebSockets Synchronization:** Event-driven architecture replaces standard REST polling. Every drag, drop, and status change is broadcasted via a duplex `Socket.io` connection to all connected clients.
-*   **Multi-Tier Authorization & RBAC:** Employs middleware-level route protection delineating `Admin` privileges (user approval, global analytics) from `Employee` execution boundaries. Includes a robust manual **Admin Approval Workflow** to prevent unauthorized registration.
-*   **Interactive Analytics Engine:** Leverages `Recharts` to process unstructured NoSQL data into actionable insights, featuring dynamic burndown charts and real-time status distributions.
+*   🧠 **Autonomous AI Task Orchestration:** Seamlessly integrates with the lightning-fast Groq API (Llama-3.1). Submit a vague task, and the AI automatically infers priority, categorizes the workload, and generates structured checklists.
+*   ⚡ **Zero-Latency WebSockets Synchronization:** Event-driven architecture replaces standard REST polling. Every drag, drop, and status change is broadcasted via a duplex `Socket.io` connection to all connected clients.
+*   🔐 **Multi-Tier Authorization & RBAC:** Employs middleware-level route protection delineating `Admin` privileges (user approval, global analytics) from `Employee` execution boundaries. Includes a robust manual **Admin Approval Workflow** to prevent unauthorized registration.
+*   📊 **Interactive Analytics Engine:** Leverages `Recharts` to process unstructured NoSQL data into actionable insights, featuring dynamic burndown charts and real-time status distributions.
 
 ---
 
@@ -83,10 +83,10 @@ Strict JSON Web Token (JWT) stateless authentication delineates `Admin` privileg
 
 As a Full-Stack Software Engineer, this project was architected to solve complex, real-world engineering challenges:
 
-*   **Prompt Engineering & Deterministic AI:** Architected a custom API wrapper that enforces strict formatting outputs from LLMs. The AI acts as an autonomous PM, successfully converting ambiguous user inputs into 10-step actionable technical checklists with calculated priorities.
-*   **Race-Condition Mitigation:** Overcame race conditions in React state management by decoupling local optimistic UI updates from the server-side WebSocket broadcasts, resulting in a butter-smooth drag-and-drop experience (`@hello-pangea/dnd`).
-*   **Security & Data Integrity:** Implemented production-level security including JWT stateless authentication, `bcrypt` password hashing, strict CORS policies, environment variable encryption, and robust Mongoose Schema validation.
-*   **Responsive UI/UX Engineering:** Built a complex, heavy-data React dashboard utilizing custom Tailwind CSS grids, Flexbox layouts, and Framer Motion micro-animations that remains entirely functional on mobile devices.
+*   🤖 **Prompt Engineering & Deterministic AI:** Architected a custom API wrapper that enforces strict formatting outputs from LLMs. The AI acts as an autonomous PM, successfully converting ambiguous user inputs into 10-step actionable technical checklists with calculated priorities.
+*   🏎️ **Race-Condition Mitigation:** Overcame race conditions in React state management by decoupling local optimistic UI updates from the server-side WebSocket broadcasts, resulting in a butter-smooth drag-and-drop experience (`@hello-pangea/dnd`).
+*   🛡️ **Security & Data Integrity:** Implemented production-level security including JWT stateless authentication, `bcrypt` password hashing, strict CORS policies, environment variable encryption, and robust Mongoose Schema validation.
+*   📱 **Responsive UI/UX Engineering:** Built a complex, heavy-data React dashboard utilizing custom Tailwind CSS grids, Flexbox layouts, and Framer Motion micro-animations that remains entirely functional on mobile devices.
 
 ---
 
