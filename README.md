@@ -32,7 +32,8 @@
 
 - [Overview](#-overview)
 - [Application Showcase](#-application-showcase)
-- [Enterprise-Grade Features](#-enterprise-grade-features)
+- [Tech Stack](#️-tech-stack)
+- [Core Features & Capabilities](#-core-features--capabilities)
 - [Technical Highlights](#-technical-highlights-for-recruiters--engineers)
 - [System Architecture & Directory Structure](#️-system-architecture--directory-structure)
 - [Live Demonstration](#-live-demonstration)
@@ -70,7 +71,30 @@ Strict JSON Web Token (JWT) stateless authentication delineates `Admin` privileg
 
 ---
 
-## ✨ Enterprise-Grade Features
+## 🛠️ Tech Stack
+
+**Frontend**
+*   **React (Vite):** Fast, modern UI library for rendering dynamic interfaces.
+*   **Tailwind CSS:** Utility-first styling for highly responsive layouts.
+*   **Framer Motion:** Smooth micro-animations and transitions.
+*   **Hello-Pangea/dnd:** Robust drag-and-drop mechanics for the Kanban board.
+*   **Recharts:** Interactive and highly customizable data visualizations.
+
+**Backend**
+*   **Node.js & Express.js:** Scalable server architecture.
+*   **MongoDB & Mongoose:** Flexible NoSQL database and Object Data Modeling.
+*   **Socket.io:** Duplex WebSockets for real-time state synchronization.
+*   **Groq API (Llama-3.1):** High-speed LLM integration for AI-powered generation.
+
+**DevOps & Security**
+*   **JSON Web Tokens (JWT):** Stateless authentication.
+*   **Bcrypt:** Cryptographic password hashing.
+*   **Vercel:** Edge-network frontend deployment.
+*   **Render:** PaaS backend hosting.
+
+---
+
+## ✨ Core Features & Capabilities
 
 *   🧠 **Autonomous AI Task Orchestration:** Seamlessly integrates with the lightning-fast Groq API (Llama-3.1). Submit a vague task, and the AI automatically infers priority, categorizes the workload, and generates structured checklists.
 *   ⚡ **Zero-Latency WebSockets Synchronization:** Event-driven architecture replaces standard REST polling. Every drag, drop, and status change is broadcasted via a duplex `Socket.io` connection to all connected clients.
